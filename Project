@@ -1,0 +1,84 @@
+import matplotlib.pyplot as plt
+
+import numpy as np
+
+# Simulated hourly temperature data (°C)
+
+indoor_temp = np.random.normal(24, 1.5, 24)  # indoor temp throughout the day
+
+outdoor_temp = np.random.normal(35, 2, 24)  # outdoor temp throughout the day
+
+# Simulated hourly energy consumption data (kWh)
+
+energy_consumption = np.random.normal(3, 0.5, 24)
+
+# Lighting level (lux)
+
+lighting_level = np.random.normal(300, 50, 24)
+
+# Plotting temperature profile
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(indoor_temp, label="Indoor Temp (°C)")
+
+plt.plot(outdoor_temp, label="Outdoor Temp (°C)", linestyle='--')
+
+plt.title("Temperature Profile Over 24 Hours")
+
+plt.xlabel("Hour of Day")
+
+plt.ylabel("Temperature (°C)")
+
+plt.legend()
+
+plt.grid(True)
+
+plt.show()
+
+
+
+# Plotting energy consumption
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(energy_consumption, color='green')
+
+plt.title("Hourly Energy Consumption")
+
+plt.xlabel("Hour of Day")
+
+plt.ylabel("Energy (kWh)")
+
+plt.grid(True)
+
+plt.show()
+
+
+
+# Plotting lighting levels
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(lighting_level, color='orange')
+
+plt.title("Indoor Lighting Levels")
+
+plt.xlabel("Hour of Day")
+
+plt.ylabel("Illuminance (lux)")
+
+plt.grid(True)
+
+plt.show()
+
+
+
+# Summary Statistics
+
+print("Average Indoor Temp:", round(np.mean(indoor_temp), 2), "°C")
+
+print("Average Energy Consumption:", round(np.mean(energy_consumption), 2), "kWh")
+
+print("Average Lighting Level:", round(np.mean(lighting_level), 2), "lux")
+
